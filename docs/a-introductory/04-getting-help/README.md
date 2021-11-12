@@ -187,43 +187,70 @@ Find all the info you need in the man-pages. Make sure to comment the commands y
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The free command
+### ✅ The free command
+
+ram usage
+
+              total        used        free      shared  buff/cache   available
+Mem:       16641840     9611316     6801172       17720      229352     6896792
+Swap:      50331648      180180    50151468
 
 *Describe in your own words what the `free` command does. Give an example and a partial output.*
 
-### ❌ The id command
+### ✅ The id command
+
+shows active uid and gfroups
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
 
-### ❌ The tree command
+### ✅ The tree command
+
+shows file tree structure
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
 
-### ❌ The which command
+### ✅ The which command
+
+which  returns the pathnames of the files (or links) which would be executed in the current environment, had its arguments been given as commands
+in a strictly POSIX-conformant shell.  It does this by searching the PATH for executable files matching the names of the arguments. It  does  not
+canonicalize path names.
 
 *Describe in your own words what the `which` command does. What is the result for `pwd` ?*
 
-### ❌ The file command
+storage location/path for a command
+
+### ✅ The file command
 
 *Describe in your own words what the `file` command does. What is the result for `~/.bashrc` ?*
 
-### ❌ The type command
+shows file encoding
+
+### ✅ The type command
+
+aliases 
 
 *Describe in your own words what the `type` command does. What is the result for `ls` and what is the result for `g++` ?*
 
-### ❌ Counting lines and words
+### ✅ Counting lines and words
+
+wc -l yourTextFile
+wc -w yourTextFile
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
 
-### ❌ The wget command
+### ✅ The wget command
+
+file download from the web 
 
 *How can you download a file from the Internet using the command line?. Find a file online to use it on and demonstrate its usage.*
 
-### ❌ The dmesg command
+### ✅ The dmesg command
+
+display kernel info
 
 *Describe in your own words what the `dmesg` command does. Give an example and a partial output.*
 
-### ❌ Checksums
+### ✅ Checksums
 
 *Go to the website of Raspberry Pi - [https://www.raspberrypi.org/software/operating-systems](https://www.raspberrypi.org/software/operating-systems) and download the Raspberry Pi OS image using the `wget` command line tool. Now check if the SHA-256 checksum complies with the one being advertised on the website.*
 
@@ -231,14 +258,22 @@ Mark challenges using a ✅ once they are finished.
 
 *What is the use of this hash?*
 
-### ❌ The printenv command
+sha256sum
+
+### ✅ The printenv command
+
+prints the enviroment variables
 
 *Describe in your own words what the `printenv` command does.*
 
-### ❌ IP Address
+### ✅ IP Address
+
+ifconfig
 
 *Find the IP address of your WiFi interface. What command did you use?*
 
-### ❌ IP of Sivir Server
+### ✅ IP of Sivir Server
+
+nslookup
 
 *What is the IP address of the internal server `sivir.devbit.be`? Make sure you are connected to the `Devbit` network.*
