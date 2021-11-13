@@ -258,7 +258,7 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Locate
+### ✅ Locate
 
 *Install the `locate` command and update the index database.*
 
@@ -268,21 +268,31 @@ Mark challenges using a ✅ once they are finished.
 * the configuration file `ssh_config`
 * `auth.log`
 
-### ❌ Python man-pages
+/usr/share/doc/sudo/examples/sudoers.dist
+/etc/ssh/ssh_config
+/etc/ssh/ssh_config.d
+
+auth.log not found
+
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the man-pages of `python`.*
 
-### ❌ Python man-pages
+/usr/bin/man
+
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the `find` binary.*
 
-### ❌ Which
+/usr/bin/find
+
+### ✅ Which
 
 *What is the location of the following commands for the current user:*
 
-* `passwd`
-* `locate`
-* `fdisk`
+* `passwd` /usr/bin/passwd
+* `locate` /usb/bin/locate
+* `fdisk` /usr/sbin/fdisk
 
 *Why are the location of `passwd` and `fdisk` different? What is `fdisk` used for?*
 
@@ -294,22 +304,40 @@ Make sure to redirect the `permission denied` errors to `/dev/null` for all sear
 
 *Find the file `kernel.log`.*
 
-#### ❌ .bashrc
+#### ✅ .bashrc
 
 *Find the files `.bashrc`.*
+/etc/bash.bashrc
+/etc/skel/.bashrc
+/home/arno/.bashrc
+/home/testuser/.bashrc
+/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/Git/etc/bash.bashrc
+/mnt/c/Program Files/Git/etc/bash.bashrc
+/mnt/d/Projects/argonServer/pi/.bashrc
+/root/.bashrc
+/usr/share/base-files/dot.bashrc
+/usr/share/doc/adduser/examples/adduser.local.conf.examples/bash.bashrc
+/usr/share/doc/adduser/examples/adduser.local.conf.examples/skel/dot.bashrc
 
-#### ❌ System Configuration Files
+#### ✅ System Configuration Files
 
 *Search for files that end with the extension `.conf` and contain a filename with the keyword `system` in the `/etc` directory.*
+
+locate "*system*.conf"
 
 #### ❌ User Readable Files
 
 *What option can we use on `find` to make sure the current user can read the file? Don't use the `-perm` option. There is a better option. Give a nice example.*
 
-#### ❌ Altered Log Files
+#### ✅ Altered Log Files
 
 *Find all log files in `/var/log` that were modified in the last 24 hours. Make sure to only include files and not directories. Now extend the command to perform a long listing human readable `ls` for each file.*
 
-#### ❌ Steal All Logs
+find /var/log -mtime 1 2>/dev/null -exec ls -lh '{}' \;
+
+#### ✅ Steal All Logs
 
 *Create a directory `logs` in `/tmp` and copy all `*.log` files you can find on the system to that location.*
+
+mkdir /tmp/logs
+find / -name "*.log" 2>/dev/null -exec cp '{}' /tmp/logs/ \;
