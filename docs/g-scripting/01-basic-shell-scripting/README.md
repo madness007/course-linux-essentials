@@ -604,11 +604,26 @@ Solve the challenges by creating small bash scripts. Place the bash scripts here
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Log the Date
+### ✅ Log the Date
 
 *Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
 
-### ❌ Available Memory
+```
+#!/usr/bin/env bash
+
+touch date.log
+
+while true
+do
+    now=$(date +%F)
+
+    echo "${now}"
+    echo "${now}" >> date.log
+    sleep 10
+done
+```
+
+### ✅ Available Memory
 
 *Output the available system memory together with the current date in the following format:*
 
@@ -616,9 +631,18 @@ Mark challenges using a ✅ once they are finished.
 [Thu 14 May 2020 11:12:55 AM CEST] MemAvailable:   28439572 kB
 ```
 
+```
+#!/usr/bin/env bash
+
+now=$(date +%c)
+memfree=$(grep "^MemFree:" /proc/meminfo)
+
+echo "[${now}] ${memfree}"
+```
+
 *The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
 
-### ❌ Fetching Github Keys
+### ✅ Fetching Github Keys
 
 *Create a script that fetches the public SSH keys of a user on GitHub and displays them in the terminal. This can be accomplished by using the curl tool to access the endpoint `https://github.com/<username>.keys`, where `<username>` is an existing github username.*
 
@@ -637,12 +661,25 @@ Mark challenges using a ✅ once they are finished.
 Please enter GitHub username: BioBoost
 Fetching Keys
 ...
+#!/usr/bin/env bash
+
+echo "Please enter your github name:"
+read githubname
+echo "Getting gitkeys for: $githubname"
+echo $(curl -s https://github.com/${githubname}.keys)
+
+
 ```
 
 ### ❌ DHCP Traffic
 
 *Create a script that filters DHCP network traffic and outputs matching MAC-Addresses, IP-Addresses and Hostnames.*
 
-### ❌ Backups
+### ✅s Backups
 
 *Choose a directory on your system (best to choose one in your home-dir). Create a script that archives this directory in a `.tar.gz` tarball file. Add a timestamp in the name of the output file.*
+
+#!/usr/bin/env bash
+
+now=$(date +%F)
+echo $(tar -czvf /home/arno/backup/${now}_backup.tar.gz /home/arno --exclude "/home/arno/backup")
