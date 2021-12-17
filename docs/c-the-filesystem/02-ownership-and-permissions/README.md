@@ -382,3 +382,8 @@ Mark challenges using a ✅ once they are finished.
 ### ❌ Etcetera
 
 *Who is the owner of the `/etc` directory on the system? What are the permissions on this directory? Why can you list the content of this directory?*
+
+sudo ls -al /
+
+the owner is root.
+only root can do everything. but the people in the root group can read and execute files in it.

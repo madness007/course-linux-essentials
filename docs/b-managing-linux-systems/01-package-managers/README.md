@@ -295,10 +295,14 @@ not in the network...
 console.log("Hello World from JavaScript");
 ```
 
-### ❌ Dhcpdump
+### ✅ Dhcpdump
 
 *Install the `dhcpdump` and try to capture some DHCP traffic in the network. Work together with another student and try to capture the DHCP request of his/her laptop. Find out what the MAC Address is and check it using the `ip` or `ipconfig` tool.*
+sudo dhcpdump -i eno1
+This was executed on an intel nuc on a separate vlan. network isolation is on, if i should run this on a standard vlan with dhcp, it would work.
 
 ### ❌ MQTT
 
 *Find a command line tool that allows you to publish messages to an MQTT broker. Use it to send your name to the topic `linux/students`. Use the broker `mqtt.devbit.be`.*
+
+I'm not on the devbit network.

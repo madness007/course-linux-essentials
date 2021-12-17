@@ -300,9 +300,11 @@ auth.log not found
 
 Make sure to redirect the `permission denied` errors to `/dev/null` for all searches unless specified otherwise.
 
-#### ❌ kernel.log
+#### ✅ kernel.log
 
 *Find the file `kernel.log`.*
+
+sudo find / -name "kernel.log" 2>/dev/null
 
 #### ✅ .bashrc
 
@@ -339,5 +341,6 @@ find /var/log -mtime 1 2>/dev/null -exec ls -lh '{}' \;
 
 *Create a directory `logs` in `/tmp` and copy all `*.log` files you can find on the system to that location.*
 
-mkdir /tmp/logs
-find / -name "*.log" 2>/dev/null -exec cp '{}' /tmp/logs/ \;
+#### ❌ Markdown README files
+
+*Find all `README.md` files on your system. Can you make it so the case of the filename does not matter? In other words, you should also be able to find `readme.md`, `Readme.md`, `readme.MD`, ...*
